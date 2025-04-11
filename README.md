@@ -2,7 +2,7 @@
 ## editor-container 
 
 ### What is this ?
-Heard for devContainers in vscode ? This is exactly the same idea for editors. I use lunarvim as my editor of choice, you'll need to make appropriate changes for your distribution of neovim.
+Heard of devContainers in vscode ? This is exactly the same idea for editors. I use lunarvim as my editor of choice, you'll need to make appropriate changes for your distribution of neovim.
 
 ### Why ?
 VSCode has become unusable for me in the recent days. It used to work flawlessly on my 7 year old machine, but now
@@ -35,7 +35,7 @@ $ docker build -t editor:latest --build-arg HOST_UID=$(id -u) --build-arg HOST_G
     ```bash
     $ docker run -it --rm -v $(pwd):/workspace --user $(id -u):$(id -g) editor:latest
     ```
-    * When you run the container and launch lunarvim for the first time and open a, say python file,
+    * When you run the container and launch lunarvim for the first time and open a python file,
     it will fetch pyright, nvim-treesitter etc. All these will be cached in the container in the location:
     ~/.local/share/lunvarim , ~/.local/share/lvim , ~/.config/lvim
 
