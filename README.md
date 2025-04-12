@@ -25,7 +25,11 @@ container.
 
 * Build the container:
 ```bash
-$ docker build -t editor:latest --build-arg HOST_UID=$(id -u) --build-arg HOST_GID=$(id -g) .
+$ docker build -t editor:latest \
+  --build-arg HOST_UID=$(id -u) \
+  --build-arg HOST_GID=$(id -g) \
+  --build-arg HOST_USER=$(id -un) \
+  --build-arg HOST_GROUP=$(id -gn) .
 ```
 
 * To launch the container :
@@ -50,7 +54,7 @@ Reason for this is when we bind mount as there would not be no folders in the ab
 
 * Now, you need to update the config.lua on your host system to run init.lua of your custom config. I have my custom config sitting at `/home/sourabh/dotfiles/lvim`
     * For this, edit the config.lua in this folder accordingly and paste it in `~/.config/lvim/`
-    * 
+    * If you're looking for some inspiration for custom config, you can check out mine [here](https://github.com/diningPhilosopher64/dotfiles)
  
 
 
